@@ -15,6 +15,7 @@ for makan in LOCS:
     while lat <= f_lat:
         while long <= f_long:
             #TODO
+            print(lat, long)
             result = client(functions.contacts.GetLocatedRequest(
                 geo_point=types.InputGeoPoint(
                     lat=lat,
@@ -30,17 +31,16 @@ for makan in LOCS:
                 username = user.username
                 phone = user.phone
                 try:
-                    with mysql.connector.connect() as connection:
+                    with mysql.connector.connect(user=DATABASE_USER, host=DATABASE_HOST, password=DATABASE_PASSWORD, database=DATABASE_NAME) as connection:
                         with connection.cursor() as cursor:
-                            sql = f""
+                            sql = f"INSERT INTO {makan_name} (id, access_hash, first_name, last_name, username, phone) values ('{id}', '{access_hash}', '{first_name}', '{last_name}', '{username}', '{phone}')"
                             cursor.execute(sql)
                         connection.commit()
-
                 except:
                     continue
             #TODO
-            print((lat , long))
             long += GAP
+        long = this_makan['long1']
         lat += GAP
 
 

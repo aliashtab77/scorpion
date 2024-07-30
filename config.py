@@ -6,28 +6,18 @@ LOCS = {
         "long1":51.378129,
         "long2":51.402590,
     },
-    "shahroud":{
-        "lat1":36.424154,
-        "lat2":36.421826,
-        "long1":54.954018,
-        "long2":54.961204,
-    },
-    "kashan":{
-        "lat1":33.993128,
-        "lat2":33.981133,
-        "long1":51.433938,
-        "long2":51.457858,
-    }
+
 }
 
 # programs defualts
-GAP = 0.00827
+GAP = 0.00120
 
 # database configs
 DATABASE_NAME = "scorpion"
 DATABASE_USER = "root"
 DATABASE_PASSWORD = ""
 DATABASE_HOST = "localhost"
+DATABASE_NAME_SPIDER = "spider"
 
 
 # telegram configs
